@@ -49,6 +49,6 @@ class TestAutorize():
         driver.find_element(By.XPATH, ".//*[.='Восстановить пароль']").click()
         driver.find_element(By.XPATH, ".//*[.='Email']/input").send_keys("elena_dunaeva9999@yandex.ru")
         driver.find_element(By.XPATH, ".//*[.='Восстановить']").click()
-        remembered_password_page = driver.find_element(By.XPATH, ".//*[.='Воссановление пароля']")
+        remembered_password_page = driver.find_element(By.XPATH, ".//*[.='Восстановление пароля']")
         assert remembered_password_page
         driver.quit()

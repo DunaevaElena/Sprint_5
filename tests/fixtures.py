@@ -5,7 +5,7 @@ import pytest
 class Fixtures:
     @pytest.fixture(scope="function", autouse=False)
     def login_generate(self):
-        login = f"elena_dunaeva9{random.randint(100, 300)}@yandex.ru"
+        login = f"elena_dunaeva9{random.randint(100, 990)}@yandex.ru"
         return login
 
     @pytest.fixture(scope="function", autouse=False)

@@ -1,57 +1,22 @@
-class BooksCollector:
-
-    def __init__(self):
-        self.books_genre = {}
-        self.favorites = []
-        self.genre = ['Фантастика', 'Ужасы', 'Детективы', 'Мультфильмы', 'Комедии']
-        self.genre_age_rating = ['Ужасы', 'Детективы']
-
-    # добавляем новую книгу
-    def add_new_book(self, name):
-        if not self.books_genre.get(name) and 0 < len(name) < 41:
-            self.books_genre[name] = ''
-
-    # устанавливаем книге жанр
-    def set_book_genre(self, name, genre):
-        if name in self.books_genre and genre in self.genre:
-            self.books_genre[name] = genre
-
-    # получаем жанр книги по её имени
-    def get_book_genre(self, name):
-        return self.books_genre.get(name)
-
-    # выводим список книг с определённым жанром
-    def get_books_with_specific_genre(self, genre):
-        books_with_specific_genre = []
-        if self.books_genre and genre in self.genre:
-            for name, book_genre in self.books_genre.items():
-                if book_genre == genre:
-                    books_with_specific_genre.append(name)
-        return books_with_specific_genre
-
-    # получаем словарь books_genre
-    def get_books_genre(self):
-        return self.books_genre
-
-    # возвращаем книги, подходящие детям
-    def get_books_for_children(self):
-        books_for_children = []
-        for name, genre in self.books_genre.items():
-            if genre not in self.genre_age_rating and genre in self.genre:
-                books_for_children.append(name)
-        return books_for_children
-
-    # добавляем книгу в Избранное
-    def add_book_in_favorites(self, name):
-        if name in self.books_genre:
-            if name not in self.favorites:
-                self.favorites.append(name)
-
-    # удаляем книгу из Избранного
-    def delete_book_from_favorites(self, name):
-        if name in self.favorites:
-            self.favorites.remove(name)
-
-    # получаем список Избранных книг
-    def get_list_of_favorites_books(self):
-        return self.favorites
+By.XPATH, ".//*[.='Личный Кабинет']" #Личный кабинет
+By.XPATH, ".//*[.='Восстановить пароль']" #Восстановить пароль на странице авторизации
+By.XPATH, ".//*[.='Имя']/input" #Инпут введения имени
+By.XPATH, ".//*[.='Email']/input" #Инпут введения имейла
+By.XPATH, ".//*[.='Пароль']/input" #Инпут введения пароля
+By.XPATH, ".//*[.='Зарегистрироваться']" #кнопка Зарегистрироваться
+By.XPATH, ".//*[.='Некорректный пароль']" #ошибка при неккоректном пароле
+By.XPATH, ".//*[.='Войти в аккаунт']" #кнопка Войти в аккаунт
+By.XPATH, ".//*[.='Войти']" #кнопка Войти на странице авторизации
+By.XPATH, ".//*[.='Выход']" #кнопка Выход из личного кабинета
+By.XPATH, ".//*[.='Восстановить']" #восстановление пароля
+By.XPATH, ".//*[.='Восстановление пароля']" #восстановление пароля
+By.XPATH, ".//*[contains (text(), 'Конструктор')]" #кнопка Конструктор
+By.XPATH, ".//*[.='Соберите бургер']" #текст на главной
+By.CLASS_NAME, "AppHeader_header__logo__2D0X2" #кнопка - логотит сайта
+By.XPATH, "//li[@class='Account_listItem__35dAP']//button[text()='Выход']" #кнопка выхода из аккаунта
+By.XPATH, ".//*[.='Соусы']" #раздел Соусы
+By.XPATH, ".//*[.='Начинки']" #раздел Начинки
+By.XPATH, ".//*[.='Булки']" #раздел Булки
+By.XPATH, "//span[text()='Соусы']/ancestor::div[contains(@class, 'current')]" #локатор при клике на Соусы
+By.XPATH, "//span[text()='Начинки']/ancestor::div[contains(@class, 'current')]" #локатор при клике на Начинки
+By.XPATH, "//span[text()='Булки']/ancestor::div[contains(@class, 'current')]" #локатор при клике на Булки

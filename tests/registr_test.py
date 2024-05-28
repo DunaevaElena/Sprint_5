@@ -1,5 +1,9 @@
+
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions
 from tests.fixtures import Fixtures
 
 
@@ -23,9 +27,9 @@ class TestRegistr(Fixtures):
         driver.find_element(By.XPATH, ".//*[.='Имя']/input").send_keys("Елена")
         email = login_generate
         driver.find_element(By.XPATH, ".//*[.='Email']/input").send_keys(email)
-        driver.find_element(By.XPATH, ".//*[.='Пароль/input']").send_keys("123")
+        driver.find_element(By.XPATH, ".//*[.='Пароль']/input").send_keys("000")
         driver.find_element(By.XPATH, ".//*[.='Зарегистрироваться']").click()
-        assert ValueError("Invalid password")
+        assert WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//*[.='Некорректный пароль']")))
         driver.quit()
 
 
